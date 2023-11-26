@@ -28,7 +28,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json({limit:'50mb'}));
 app.use(
   cors({
-    origin: "http://localhost:8000",
+    origin: "https://yelpcamp-production-9b96.up.railway.app",
     methods: "GET,POST,PUT,DELETE",
     credentials: true,
   })
