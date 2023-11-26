@@ -11,11 +11,12 @@ import bcrypt from "bcrypt";
 
 const db = new pg.Client({
   user: "postgres",
-  password: "112358",
-  host: "localhost",
-  database: "yelpcamp",
-  port: 5432,
+  password: "BcfAEgG1D*Bgc5GdD*bA5D3*1ACgGCF1",
+  host: "monorail.proxy.rlwy.net",
+  database: "railway",
+  port: 29000,
 });
+
 
 db.connect();
 
@@ -219,7 +220,6 @@ app.get("/auth/logout", (req, res) => {
 ///////////////////////////////////////////CRUD//////////////////////////////////////////////////////
 app.get("/name/:id",async(req,res)=>{
   try {
-    console.log(req.params.id);
     const text = "select name from user_yelpcamp where id=$1";
     const result = await db.query(text,[req.params.id]);
     res.status(200).json({
